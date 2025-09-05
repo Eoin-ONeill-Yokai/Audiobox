@@ -6,3 +6,11 @@ Ubuntu system and comes with a preinstalled Yabridge compatibility layer for Win
 VSTs. Use `yabridgectl` for more details.
 
 
+## Usage
+
+Using distrobox, you can create a container with the following command:
+
+```
+distrobox create --name audiobox --image ghcr.io/eoin-oneill-yokai/audiobox:master --pull always --home ~/.audiobox 
+```
+
