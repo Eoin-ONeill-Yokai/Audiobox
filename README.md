@@ -11,6 +11,7 @@ VSTs. Use `yabridgectl` for more details.
 Using distrobox, you can create a container with the following command:
 
 ```
-distrobox create --image ghcr.io/eoin-oneill-yokai/audiobox:master --pull always --home ~/.audiobox audiobox 
+distrobox create --image ghcr.io/eoin-oneill-yokai/audiobox:stable --pull always --home ~/.audiobox audiobox 
 ```
 
+You can alternatively use the branch `latest` instead of `stable`. `latest` will more often than not be a similar experience to `stable`, but there are certain circumstsances where software might be using the latest version that might not lead to the most productive audio workspace environment. Please keep this in mind! 
