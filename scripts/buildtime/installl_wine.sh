@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -oue pipefail #fail on error
+set -x #echo on
+
 CODENAME=$(lsb_release -cs)
 
 dpkg --add-architecture i386; apt update -y; mkdir -pm755 /etc/apt/keyrings;
