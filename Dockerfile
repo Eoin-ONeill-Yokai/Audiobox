@@ -7,11 +7,13 @@ RUN lsb_release -a
 
 ARG codename=$(shopt -s nullglob; awk '/^deb https:\/\/dl\.winehq\.org/ { print $3; exit 0 } END { exit 1 }' /etc/apt/sources.list /etc/apt/sources.list.d/*.list || awk '/^Suites:/ { print $2; exit }' /etc/apt/sources.list /etc/apt/sources.list.d/wine*.sources)
 
+ADD ./scripts/buildtime  /usr/bin/buildtime
+
 #Install wine-staging by setting up PPA
-RUN ./scripts/buildtime/install_wine.sh
+RUN /usr/bin/buildtime/install_wine.sh
 
 # Yabridge only supports wine 9.12 for now. Downgrade until the branch merges
-RUN ./scripts/buildtime/downgrade_wine.sh
+RUN /usr/bin/buildtime/downgrade_wine.sh
 	
 #Install winetricks + dependencies
 RUN apt install -y cabextract winetricks

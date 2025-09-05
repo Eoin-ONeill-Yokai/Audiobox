@@ -11,6 +11,6 @@ VSTs. Use `yabridgectl` for more details.
 Using distrobox, you can create a container with the following command:
 
 ```
-distrobox create --name audiobox --image ghcr.io/eoin-oneill-yokai/audiobox:master --pull always --home ~/.audiobox 
+distrobox create --image ghcr.io/eoin-oneill-yokai/audiobox:master --pull always --home ~/.audiobox audiobox 
 ```
 
