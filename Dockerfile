@@ -19,6 +19,8 @@ RUN /usr/bin/buildtime/install_airwindows.sh
 
 RUN /usr/bin/buildtime/install_chowdhury_byod.sh
 
+RUN /usr/bin/buildtime/install_chowdhury_chowtapemodel.sh
+
 #Install winetricks + dependencies
 RUN apt install -y cabextract winetricks
 
