@@ -27,6 +27,6 @@ Go to the website and download whatever product is available to your account. No
 
 ```
 sudo apt install ~/../Downloads/bitwig-studio-$version.deb # Home in this case is /home/username/.audiobox. We want to get to the real home's downloads!
-sudo distrobox-export --app bitwig-studio # This will export an application shortcut for your start menu and/or app launcher for quickly launching bitwig in the container. 
+distrobox-export --app bitwig-studio # This will export an application shortcut for your start menu and/or app launcher for quickly launching bitwig in the container. 
 ```
 
