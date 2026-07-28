@@ -16,7 +16,7 @@ distrobox create --image ghcr.io/eoin-oneill-yokai/audiobox:stable --pull always
 
 You can alternatively use the branch `latest` instead of `stable`. `latest` will more often than not be a similar experience to `stable`, but there are certain circumstsances where software might be using the latest version that might not lead to the most productive audio workspace environment. Please keep this in mind! 
 
-We're using a virtual home folder `~/.audiobox`; This home folder should house all of your wine prefixes and installations. Likewise, 
+We're using a virtual home folder `~/.audiobox`; This home folder should house all of your wine prefixes and installations.
 
 
 ### Installing and Exporting `bitwig-studio`
