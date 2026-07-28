@@ -16,7 +16,7 @@ distrobox create --image ghcr.io/eoin-oneill-yokai/audiobox:stable --pull always
 
 You can alternatively use the branch `latest` instead of `stable`. `latest` will more often than not be a similar experience to `stable`, but there are certain circumstsances where software might be using the latest version that might not lead to the most productive audio workspace environment. Please keep this in mind! 
 
-We're using a virtual home folder `~/.audiobox`; This home folder should house all of your wine prefixes and installations. Likewise, 
+We're using a virtual home folder `~/.audiobox`; This home folder should house all of your wine prefixes and installations.
 
 
 ### Installing and Exporting `bitwig-studio`
@@ -27,6 +27,6 @@ Go to the website and download whatever product is available to your account. No
 
 ```
 sudo apt install ~/../Downloads/bitwig-studio-$version.deb # Home in this case is /home/username/.audiobox. We want to get to the real home's downloads!
-sudo distrobox-export --app bitwig-studio # This will export an application shortcut for your start menu and/or app launcher for quickly launching bitwig in the container. 
+distrobox-export --app bitwig-studio # This will export an application shortcut for your start menu and/or app launcher for quickly launching bitwig in the container. 
 ```
 
