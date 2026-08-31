@@ -19,6 +19,16 @@ You can alternatively use the branch `latest` instead of `stable`. `latest` will
 We're using a virtual home folder `~/.audiobox`; This home folder should house all of your wine prefixes and installations.
 
 
+## Building Locally
+
+Clone the source code onto your system and navigate into the folder containing this repository. Run the following command (or equivalent if you're using `podman`) to build a local version of the image on your system for testing:
+
+```bash
+# When in the audiobox repository, for example: /home/user/Code/dockers/audiobox
+docker image build . --
+```
+
+
 ### Installing and Exporting `bitwig-studio`
 
 Bitwig Studio is a digital audio workstation program compatible, prebuilt and packaged for linux directly. However, on immutable systems, the only advertised option for installation is flatpak. While flatpak is often the ideal packaging format for immutable distributions, it comes with the drawback that it doesn't integrate well with external applications or dynamic linking of third party applications (think your average clap or vst plugin!) For this reason, this container is the ideal way to install bitwig studio.

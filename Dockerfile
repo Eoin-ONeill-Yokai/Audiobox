@@ -24,7 +24,7 @@ RUN /usr/bin/buildtime/install_chowdhury_chowtapemodel.sh
 #Install winetricks + dependencies
 RUN apt install -y cabextract winetricks
 
-RUN wget -c https://github.com/robbert-vdh/yabridge/releases/download/5.1.0/yabridge-5.1.0.tar.gz -O - | tar -C /usr/local/share -xz
+RUN /usr/bin/buildtime/install_yabridge_stable.sh
 
 ENV PATH="${PATH}:/usr/local/share/yabridge"
 
