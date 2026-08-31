@@ -19,15 +19,6 @@ You can alternatively use the branch `latest` instead of `stable`. `latest` will
 We're using a virtual home folder `~/.audiobox`; This home folder should house all of your wine prefixes and installations.
 
 
-## Building Locally
-
-Clone the source code onto your system and navigate into the folder containing this repository. Run the following command (or equivalent if you're using `podman`) to build a local version of the image on your system for testing:
-
-```bash
-# When in the audiobox repository, for example: /home/user/Code/dockers/audiobox
-docker image build . --
-```
-
 
 ### Installing and Exporting `bitwig-studio`
 
@@ -37,6 +28,32 @@ Go to the website and download whatever product is available to your account. No
 
 ```
 sudo apt install ~/../Downloads/bitwig-studio-$version.deb # Home in this case is /home/username/.audiobox. We want to get to the real home's downloads!
-distrobox-export --app bitwig-studio # This will export an application shortcut for your start menu and/or app launcher for quickly launching bitwig in the container. 
+sudo distrobox-export --app bitwig-studio # This will export an application shortcut for your start menu and/or app launcher for quickly launching bitwig in the container. 
 ```
 
+## Building Locally
+
+Clone the source code onto your system and navigate into the folder containing this repository. Run the following command (or equivalent if you're using `podman`) to build a local version of the image on your system for testing:
+
+```bash
+# When in the audiobox repository, for example: /home/user/Code/dockers/audiobox
+podman image build . --tag audiobox
+```
+
+This will create a local version of the audiobox image. When creating a distrobox for that image, you'll want to run something like the following:
+
+```bash
+# Note: `localhost/audiobox:latest` might differ if you're using docker. Likewise, you might want to use a different home folder location, but you should pick one that isn't already used by a previous audiobox for best testing.
+distrobox create --image localhost/audiobox:latest --home ~/.audiobox-dev audiobox-dev 
+```
+
+When iterating on changes made to the audiobox, you'll also want to remove the previous distrobox container before trying to create a new distrobox container. Otherwise, it will skip the recreation with the latest image...
+
+```bash
+# Rebuild the audiobox..
+podman image build . --tag audiobox
+# Remove the previous audiobox instance..
+distrobox rm -f audiobox-dev 
+# Create the instance again, updating it to the latest version. You might want to also remove the home folder too, depending on the complexity of the changes made..
+distrobox create --image localhost/audiobox:latest --home ~/.audiobox-dev audiobox-dev 
+```
