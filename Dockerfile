@@ -22,7 +22,7 @@ RUN /usr/bin/buildtime/install_chowdhury_byod.sh
 RUN /usr/bin/buildtime/install_chowdhury_chowtapemodel.sh
 
 #Install winetricks + dependencies
-RUN apt install -y cabextract winetricks
+RUN apt install -y cabextract
 
 RUN /usr/bin/buildtime/install_yabridge_development.sh
 
