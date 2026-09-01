@@ -13,13 +13,13 @@ ADD ./scripts/buildtime  /usr/bin/buildtime
 RUN /usr/bin/buildtime/install_wine.sh
 
 # Yabridge only supports wine 9.12 for now. Downgrade until the branch merges
-# RUN /usr/bin/buildtime/downgrade_wine.sh
+# RUN /usr/bin/buildtime/downgrade_wine.sh 
 	
-#RUN /usr/bin/buildtime/install_airwindows.sh
+RUN /usr/bin/buildtime/install_airwindows.sh
 
-#RUN /usr/bin/buildtime/install_chowdhury_byod.sh
+RUN /usr/bin/buildtime/install_chowdhury_byod.sh
 
-#RUN /usr/bin/buildtime/install_chowdhury_chowtapemodel.sh
+RUN /usr/bin/buildtime/install_chowdhury_chowtapemodel.sh
 
 #Install winetricks + dependencies
 RUN apt install -y cabextract winetricks
