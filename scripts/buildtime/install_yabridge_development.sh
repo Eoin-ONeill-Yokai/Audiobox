@@ -4,7 +4,7 @@ set -oue pipefail #fail on error
 set -x #echo on
 
 # Install yabridge dependencies
-apt install -y meson build-essential libxcb1-dev cmake cmake-extras libwine-dev libdbus-glib-1-dev libgirepository1.0-dev
+apt install -y meson build-essential libxcb1-dev cmake cmake-extras libwine-dev libdbus-glib-1-dev libgirepository1.0-dev winehq-devel
 
 # Build yabridge
 mkdir -p /src
